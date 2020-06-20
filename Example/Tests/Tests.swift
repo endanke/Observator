@@ -18,6 +18,7 @@ class ArrivingCustomers: CustomersObservator {}
 class PreviousCustomers: CustomersObservator {}
 class NextAppointment: Observator<Appointment> {}
 class GlobalAnswer: Observator<Int> {}
+class CityName: Observator<String> {}
 
 class Tests: XCTestCase {
     

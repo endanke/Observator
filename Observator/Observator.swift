@@ -62,4 +62,10 @@ open class Observator<T> {
         )
     }
     
+    public func unsubscribe(_ observer: Any) {
+        NotificationCenter.default.removeObserver(
+            observer, name: notificationName, object: nil
+        )
+    }
+    
 }

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2CFAFB6D694DEF6C015C102B7DC31A63 /* Observator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8850731C63D61B1D9A7E86E76FB1E2CA /* Observator-dummy.m */; };
-		3034EB3D249E442200F0526C /* Observator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3034EB3C249E442200F0526C /* Observator.swift */; };
+		3034EB3F249E711A00F0526C /* Observator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3034EB3E249E711A00F0526C /* Observator.swift */; };
 		60B0CE6FE829BCDF677FEE1A22F45520 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F940C819049CFF8741C0F5E3E075E607 /* Cocoa.framework */; };
 		6C1103D461609592C2894A6ABC7559C9 /* Pods-Observator_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E1BD4E015FDA740EA4396602F703B11E /* Pods-Observator_Tests-dummy.m */; };
 		7E16C46351AA788F2DC203A8D3DBD597 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F940C819049CFF8741C0F5E3E075E607 /* Cocoa.framework */; };
@@ -29,7 +29,7 @@
 /* Begin PBXFileReference section */
 		0791E2222964E5ED584B377AC56D2126 /* Pods-Observator_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Observator_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		0ECBB0F9DF7988120B77822450FF7F15 /* Observator-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Observator-Info.plist"; sourceTree = "<group>"; };
-		3034EB3C249E442200F0526C /* Observator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observator.swift; sourceTree = "<group>"; };
+		3034EB3E249E711A00F0526C /* Observator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Observator.swift; path = Observator/Observator.swift; sourceTree = "<group>"; };
 		34DA529DF5998E1053368CF90B257D46 /* Pods-Observator_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Observator_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		3BE383D852DBEB15A077EE50F4299F03 /* Observator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Observator-umbrella.h"; sourceTree = "<group>"; };
 		3D81651DD626E9285D08DC033ABED659 /* Observator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Observator.modulemap; sourceTree = "<group>"; };
@@ -107,7 +107,7 @@
 		5B3E66F5BB470CFD6017D10DB720AF24 /* Observator */ = {
 			isa = PBXGroup;
 			children = (
-				3034EB3C249E442200F0526C /* Observator.swift */,
+				3034EB3E249E711A00F0526C /* Observator.swift */,
 				3DDF64D34FC4033E4C0206DA94AA48FF /* Pod */,
 				4FE3F9CB38B8BAE54D870C33F8A95D07 /* Support Files */,
 			);
@@ -243,6 +243,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1100;
+				TargetAttributes = {
+					E61900FCF6AE36C7267AF2591BCC078C = {
+						LastSwiftMigration = 1140;
+					};
+				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 8.0";
@@ -293,7 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3034EB3D249E442200F0526C /* Observator.swift in Sources */,
+				3034EB3F249E711A00F0526C /* Observator.swift in Sources */,
 				2CFAFB6D694DEF6C015C102B7DC31A63 /* Observator-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,6 +356,7 @@
 			baseConfigurationReference = 9DCC408A857B7CA09D6348CF434336B1 /* Observator.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -374,6 +380,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -385,6 +392,7 @@
 			baseConfigurationReference = 9DCC408A857B7CA09D6348CF434336B1 /* Observator.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
