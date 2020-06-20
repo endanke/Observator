@@ -1,0 +1,6 @@
+framework module Observator {
+  umbrella header "Observator-umbrella.h"
+
+  export *
+  module * { export * }
+}

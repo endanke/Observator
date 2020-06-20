@@ -1,0 +1,16 @@
+PODS:
+  - Observator (0.1.0)
+
+DEPENDENCIES:
+  - Observator (from `../`)
+
+EXTERNAL SOURCES:
+  Observator:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Observator: 3f58b4c5b7a0a62c0c68ccbb9ff88e22962b1f64
+
+PODFILE CHECKSUM: bb503fa9490949d7cee6c9c3eea0a19bee03a094
+
+COCOAPODS: 1.8.4

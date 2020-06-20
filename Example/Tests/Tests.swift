@@ -1,29 +1,53 @@
 import XCTest
 import Observator
 
+// Sample testing classes
+struct Customer {
+    var name: String
+    var age: Int
+}
+
+struct Appointment {
+    var date: Date
+    var customer: Customer
+}
+
+// Some observator examples
+class CustomersObservator: Observator<[Customer]> {}
+class ArrivingCustomers: CustomersObservator {}
+class PreviousCustomers: CustomersObservator {}
+class NextAppointment: Observator<Appointment> {}
+class GlobalAnswer: Observator<Int> {}
+
 class Tests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure() {
-            // Put the code you want to measure the time of here.
+   func testExample() {
+        let exp = expectation(description: "")
+        let receiver = SampleReceiver()
+        DispatchQueue.global(qos: .background).asyncAfter(deadline: .now() + 0.5) {
+            ArrivingCustomers.shared.data = [Customer(name: "A", age: 22)]
         }
+        DispatchQueue.global(qos: .background).asyncAfter(deadline: .now() + 1.0) {
+            if receiver.dataArrived {
+                exp.fulfill()
+            }
+        }
+        waitForExpectations(timeout: 2.0)
     }
     
 }
 
+// Helper class to test subscriptions
+class SampleReceiver {
+    
+    var dataArrived = false
+    
+    init() {
+        ArrivingCustomers.shared.subscribe(self, selector: #selector(updated))
+    }
+    
+    @objc private func updated() {
+        dataArrived = (ArrivingCustomers.shared.data != nil)
+    }
+    
+}
