@@ -9,35 +9,17 @@
 Pod::Spec.new do |s|
   s.name             = 'Observator'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of Observator.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
-
+  s.summary          = 'Simple global data sharing mechanism for Swift.'
   s.homepage         = 'https://github.com/endanke/Observator'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'endanke' => 'endanke@gmail.com' }
   s.source           = { :git => 'https://github.com/endanke/Observator.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.platform = :osx
-  s.osx.deployment_target = "10.10"
+  s.ios.deployment_target = '10.0'
+  s.osx.deployment_target = '10.12'
+  s.tvos.deployment_target = '10.0'
+  s.watchos.deployment_target = '3.0'
+  s.swift_versions = ['4.0']
 
-  s.source_files = 'Observator/Classes/**/*'
-
-  # s.resource_bundles = {
-  #   'Observator' => ['Observator/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'Cocoa'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.source_files = 'Observator/**/*'
 end
