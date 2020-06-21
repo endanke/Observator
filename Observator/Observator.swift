@@ -41,7 +41,9 @@ open class Observator<T> {
         get {
             var data: T? = nil
             queue.sync {
-                data = self._data
+                if let _data = self._data {
+                    data = self.readTransform(_data)
+                }
             }
             return data
         }
@@ -54,6 +56,11 @@ open class Observator<T> {
     }
     
     required public init(){}
+    
+    // Will be applied on the getter of the data when it's not nil
+    open func readTransform(_ input: T) -> T {
+        return input
+    }
     
     public func subscribe(_ observer: Any, selector: Selector) {
         NotificationCenter.default.addObserver(
