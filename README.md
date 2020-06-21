@@ -42,7 +42,10 @@ DepartureCity.shared.data = "Tampere"
 // Should be: "Oulu Finland"
 DestinationCity.shared.data = "Oulu"
 
-// Observator can be also used to store the data fetching and processing logic of custom types. You can create a generic subclass with the shared data management features and do the fetching in specialized subclasses.
+// Observator can be also used to store the data fetching and 
+// processing logic of custom types. 
+// You can create a generic subclass with the shared data management 
+// features and do the fetching in specialized subclasses.
 class APIObservator<T>: Observator<T> {
     let session = URLSession(configuration: .default)
     let baseURL = URL(string: "...")!
