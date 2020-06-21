@@ -23,7 +23,8 @@ CityName.shared.data = "Helsinki"
 Advanced features:
 
 ```swift
-// You can override some methods in the observator subclass to automatically transform the stored data
+// You can override some methods in the observator subclass
+// to automatically transform the stored data
 class CityName: Observator<String> {
     override func readTransform(_ input: String) -> String {
         return "\(input) Finland"
@@ -37,9 +38,9 @@ CityName.shared.data = "Helsinki"
 class DepartureCity: CityName {}
 class DestinationCity: CityName {}
 
-// Should be: "Tampere Finland"
+// Should return on access: "Tampere Finland"
 DepartureCity.shared.data = "Tampere"
-// Should be: "Oulu Finland"
+// Should return on access: "Oulu Finland"
 DestinationCity.shared.data = "Oulu"
 
 // Observator can be also used to store the data fetching and 
